@@ -1,0 +1,60 @@
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+[sql/**.sql]
+indent_size = 4
+
+[sql/**.pgsql]
+indent_size = 4
+
+[tools/**.ps1]
+end_of_line = crlf
+indent_size = 4
+
+[src/**.cs]
+indent_size = 4
+
+[src/**.ts]
+indent_size = 2
+
+[src/**.md]
+trim_trailing_whitespace = false
+
+[*.cs]
+dotnet_diagnostic.CA1014.severity = none
+dotnet_diagnostic.CA1031.severity = none
+dotnet_diagnostic.CA1303.severity = none
+dotnet_diagnostic.CA1308.severity = none
+dotnet_diagnostic.CA1056.severity = none
+dotnet_diagnostic.CA1708.severity = none
+dotnet_diagnostic.CA1716.severity = none
+dotnet_diagnostic.CA1725.severity = none
+dotnet_diagnostic.CA1812.severity = none
+dotnet_diagnostic.CA2007.severity = none
+dotnet_diagnostic.CA2100.severity = none
+dotnet_diagnostic.CA2208.severity = none
+dotnet_diagnostic.CA2227.severity = none
+dotnet_diagnostic.IDE0001.severity = warning
+dotnet_diagnostic.IDE1006.severity = none
+dotnet_diagnostic.IDE0090.severity = none
+dotnet_diagnostic.RCS1014.severity = none
+dotnet_diagnostic.RCS1032.severity = none
+dotnet_diagnostic.RCS1033.severity = none
+dotnet_diagnostic.RCS1037.severity = none
+dotnet_diagnostic.RCS1049.severity = none
+dotnet_diagnostic.RCS1079.severity = none
+dotnet_diagnostic.RCS1123.severity = none
+dotnet_diagnostic.RCS1135.severity = none
+dotnet_diagnostic.RCS1138.severity = none
+dotnet_diagnostic.RCS1154.severity = none
+dotnet_diagnostic.RCS1157.severity = none
+dotnet_diagnostic.RCS1214.severity = none
+csharp_prefer_simple_using_statement = false
+csharp_style_prefer_range_operator = false
+csharp_style_implicit_object_creation_when_type_is_apparent = false

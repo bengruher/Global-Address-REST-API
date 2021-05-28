@@ -1,0 +1,29 @@
+digraph {
+    rankdir=LR
+    graph [ fontname="Helvetica Neue", fontcolor=blue, fontsize=8 ];
+    node [ shape=circle, fontname="Helvetica Neue", fontcolor=blue, fontsize=8 ];
+    edge [ fontname="Helvetica Neue", fontcolor=blue, fontsize=8, arrowsize=0.5,  ];
+    
+    start [ label = "", style = filled, width = 0.25 ]
+    in_progress [ label = "In progress" ]
+    in_review [ label = "Pending\nreview" ]
+    rejected [ label = "Rejected" ]
+    approved [ label = "Approved" ]
+    canceled [ label = "Canceled" ]
+    completed [ label = "", style = filled, width = 0.25]
+
+    start -> in_progress [ label = "new\ntimesheet\ncreated" ]
+    in_progress -> in_progress [ label = "time\nentry\nadded" ]
+    in_progress -> in_review [ label = "submitted\nfor review" ]
+    in_review -> in_progress [ label = "returned\nfor\ncorrection"]
+
+    in_progress -> canceled [ label = "canceled\nby employee" ]
+
+    in_review -> rejected [ label = "rejected by\nsupervisor" ]
+    in_review -> approved [ label = "approved for\nprocessing" ]
+    in_review -> canceled [ label = "canceled by\nsupervisor" ]
+        
+    rejected -> completed
+    approved -> completed
+    canceled -> completed
+}

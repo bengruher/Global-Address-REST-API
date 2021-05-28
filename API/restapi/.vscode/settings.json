@@ -1,0 +1,21 @@
+{
+  "files.autoSave": "onFocusChange",
+  "omnisharp.enableRoslynAnalyzers": true,
+  "[pgsql]": {
+    "editor.formatOnSave": false
+  },
+  "[cs]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp": true,
+    "**/data": true,
+    "**/nucc": true
+  }
+}
