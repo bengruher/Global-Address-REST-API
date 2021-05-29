@@ -15,11 +15,14 @@ namespace restapi.Controllers
 
         private readonly ILogger logger;
 
-        // public RootController(ILogger<TimesheetsController> logger, IMetaDataRepository metadataRepository)
-        public RootController(IMetaDataRepository metadataRepository)
+        public RootController(ILogger<RootController> logger, IMetaDataRepository metadataRepository)
         {
-            // this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this.metadataRepository = metadataRepository ?? throw new ArgumentNullException(nameof(metadataRepository));
+            
+            // these files create the metadata and data tables based on the configuration file. might move these to a more suitable location
+            metadataRepository.ReadConfig();             // reads in addressConfig.json and adds address formats to metadata
+            metadataRepository.GenCountryTables();       // sql ddl to create tables for each country, depends on rows in the metadata
         }
 
         // GET countries

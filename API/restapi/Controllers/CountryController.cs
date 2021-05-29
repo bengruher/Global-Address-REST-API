@@ -9,25 +9,32 @@ using restapi.Models;
 
 namespace restapi.Controllers
 {
-    [Route("[controller]")]
-    public class CountryController
+    // [Route("[controller]")]
+    public class CountryController : Controller
     {
         private readonly ILogger logger;
         private readonly IMetaDataRepository metadataRepository;
 
-        // public EmployeesController(ILogger<EmployeesController> logger, IEmployeeRepository employeeRepository)
-        public CountryController(IMetaDataRepository metadataRepository)
+        public CountryController(ILogger<CountryController> logger, IMetaDataRepository metadataRepository)
         {
-            // this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this.metadataRepository = metadataRepository ?? throw new ArgumentNullException(nameof(metadataRepository));
         }
 
         [HttpGet("{countryName}")]
+        [ProducesResponseType(404)]
         [ProducesResponseType(typeof(Dictionary<string, string>), 200)]
-        public Dictionary<string, string> GetFields(string countryName)
+        public IActionResult GetFields(string countryName)
         {
             var fields = metadataRepository.GetFields(countryName);
-            return fields.Fields;
+
+            if(fields == null)
+            {
+                logger.LogInformation($"Country {countryName} wasn't found");
+                return NotFound();
+            }
+
+            return Ok(fields.Fields);
         }
 
         /*

@@ -104,3 +104,4 @@ C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\obj
 C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\obj\Debug\net50\restapi.RazorTargetAssemblyInfo.cache
 C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\obj\Debug\net50\restapi.csproj.CopyComplete
 C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\obj\Debug\net50\restapi.genruntimeconfig.cache
+C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\bin\Debug\net50\addressConfig.json
