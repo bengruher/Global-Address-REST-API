@@ -28,9 +28,11 @@ namespace restapi.Controllers
         [ProducesResponseType(typeof(IEnumerable<string>), 200)]
         public IEnumerable<string> GetCountries()
         {
-            return metadataRepository
+            HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            var output = metadataRepository
                 .GetCountries()
                 .OrderBy(c => c);
+            return output;
         }
 
         /*

@@ -13,7 +13,7 @@ namespace restapi
         public IEnumerable<string> GetCountries() 
         {
             // MOCK:
-            return new List<string>() { "USA" };
+            return new List<string>() { "USA", "INDIA" };
         }
 
         public CountryFields GetFields(string CountryName) 
