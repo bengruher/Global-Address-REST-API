@@ -14,9 +14,6 @@ namespace restapi
         public IEnumerable<string> GetCountries() 
         {
             // MOCK:
-<<<<<<< HEAD:API/restapi/MetaDataRepository.cs
-            return new List<string>() { "USA", "INDIA" };
-=======
             return new List<string>() { "USA", "Canada", "India", "Mexico" };
 
             /*
@@ -26,7 +23,6 @@ namespace restapi
                 return countries.All;
             }
             */
->>>>>>> 568a79174b42aebe7e0aac9f8eac0bfafbde46ad:API/restapi/Repositories/MetaDataRepository.cs
         }
 
         public CountryFields GetFields(string CountryName) 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#search").hide();
+            $.ajax({
+                url: 'http://localhost:5000/',
+                data: null,
+                type: 'GET',
+                dataType: 'json',
+                beforeSend: function (req) {
+                    req.setRequestHeader('Accept', 'application/json');
+                },
+                success: function(data) {
+                    var $el = $('#Country');
+                    $.each(data, function(key, value) {
+                        $el.append($("<option></option>")
+                        .attr("value", value).text(value));
+                    });
+                },
+            });
+            $( "#Country" ).change(function() {
+                // Make GET call to get selected country specific fields
+                // <div>
+                //     <asp:Label id="OutputLabel" runat="server"></asp:Label>           
+                // </div>
+                $.ajax({
+                    url: 'http://localhost:5000/Country/USA',
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json',
+                    beforeSend: function (req) {
+                        req.setRequestHeader('Accept', 'text/plain');
+                    },
+                    success: function(data) {
+
+                        //var $el = $('#Country');
+                        $.each(data, function(key, value) {
+                            //$el.append($("<option></option>")
+                            //.attr("value", value).text(value));
+                            console.log('Helloooo')
+                        });
+                    },
+                });
+                
+                var myMap = new Map();
+                myMap.set("India", ['name', 'city']);
+                myMap.set("USA", ['phone']);
+
+                $(".fields").empty();
+                var optionsData = myMap.get($(this).val());
+                $(fields).append('<label>Enter one or more field to search for Address</label><br>');
+                $.each(optionsData, function( index, value ) {
+                        $(fields).append('<div><label for= "Name">', value, '</label><input type="text" name="mytext[]"/><br><br></div>');
+                });
+                $("#search").show();
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <label>Select Country to search for Address</label><br>
+        <select name = "Country" id = "Country">
+            <option value="Select Country">Choose Country</option>
+        </select>
+        <br><br>
+        <form>
+            <div class="fields" id="fields"></div>
+            <div>
+                <button type="button" id="search">Search</button>
+            </div>
+        </form>
+    </body>
+</html>
