@@ -43,9 +43,9 @@
                         // Reset the fields div on every Country selection
                         $(".fields").empty();
 
-                        $(fields).append('<label>Enter one or more field to search for Address</label><br><br>');
+                        $(fields).append('<label>Enter field/s to search an Address</label><br><br>');
                         $.each(data, function(key, value) {
-                            $(fields).append('<div><label>', key, '&nbsp&nbsp</label><input type="text" name="mytext[]"/><br><br></div>');
+                            $(fields).append('<div><label>', key, '&nbsp&nbsp</label><input style="display: inline-block; width: 200px; float: right;" type="text" name="mytext[]"/><br><br></div>');;
                             console.log(key, value);
                         });
                         $("#search").show();
@@ -89,12 +89,12 @@
         </script>
     </head>
     <body>
-        <div id="parentDiv" style="border: solid green; width: 400px; margin: auto; padding: 10px; font-family:'Courier New'; background-color: rgb(199, 238, 199);">
-            <b><text style="color:black; font-family:'Courier New';font-size:30px; padding-left: 20px;">Address Finder</text></b><br>
+        <div id="parentDiv" style="border: solid green; width: 350px; margin: auto; padding: 20px; font-family:'Courier New'; background-color: rgb(199, 238, 199); text-align: center;">
+            <b><text style="color:black; font-family:'Courier New';font-size:30px;">Address Finder</text></b><br>
             <hr><br>
             <!-- Div for Searching address -->
             <div id="searchAddress">
-                <label>Select Country to search for Address</label><br><br>
+                <label>Select Country to search an Address</label><br><br>
                 <select name = "Country" id = "Country" style="font-family:'Courier New';">
                     <option value="Select Country">Choose Country</option>
                 </select>
