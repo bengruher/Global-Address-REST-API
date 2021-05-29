@@ -17,7 +17,7 @@ $.ajax({
   type: 'GET',
   dataType: 'json',
   beforeSend: function (req) {
-    req.setRequestHeader('Accept', 'application/com.my-company.my-product.root+json');
+    req.setRequestHeader('Accept', 'application/json');
   },
   success: function (root) {
     // process root node

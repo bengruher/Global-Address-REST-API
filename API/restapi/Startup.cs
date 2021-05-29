@@ -54,14 +54,22 @@ namespace restapi
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
+<<<<<<< HEAD
                     Title = "CPSC 5200 Project",
+=======
+                    Title = "CPSC 5200 Team Project",
+>>>>>>> 568a79174b42aebe7e0aac9f8eac0bfafbde46ad
                     Version = "v1",
                     Contact = new OpenApiContact()
                     {
-                        Name = "Michaeljon Miller",
-                        Email = "michaeljon.miller@outlook.com"
+                        Name = "Ben Gruher",
+                        Email = "gruherb@seattleu.edu"
                     },
+<<<<<<< HEAD
                     Description = "CPSC 5200 Project"
+=======
+                    Description = "Address Reconciler"
+>>>>>>> 568a79174b42aebe7e0aac9f8eac0bfafbde46ad
                 });
             });
 

@@ -1,0 +1,24 @@
+{
+    "USA" : [
+        {
+            "Street" : "TEXT"
+        },
+        {
+            "City" : "TEXT"
+        },
+        {
+            "State" : "TEXT"
+        }
+    ],
+    "Canada" : [
+        {
+            "Street" : "TEXT"
+        },
+        {
+            "City" : "TEXT"
+        },
+        {
+            "Province" : "TEXT"
+        }
+    ]
+}
