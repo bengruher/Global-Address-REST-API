@@ -26,6 +26,7 @@ namespace restapi.Controllers
         [ProducesResponseType(typeof(Dictionary<string, string>), 200)]
         public IActionResult GetFields(string countryName)
         {
+            HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var fields = metadataRepository.GetFields(countryName);
 
             if(fields == null)

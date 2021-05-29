@@ -30,40 +30,27 @@
             // Display the fields returned
             // Show Search button
             $( "#Country" ).change(function() {
-                // TODO: Make GET call to get selected country specific fields
-                // $.ajax({
-                //     url: 'http://localhost:5000/Country/USA',
-                //     data: null,
-                //     type: 'GET',
-                //     dataType: 'json',
-                //     beforeSend: function (req) {
-                //         req.setRequestHeader('Accept', 'text/plain');
-                //     },
-                //     success: function(data) {
+                var url = 'http://localhost:5000/' + $("#Country").val();
+                $.ajax({
+                    url: url,
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json',
+                    beforeSend: function (req) {
+                        req.setRequestHeader('Accept', 'text/plain');
+                    },
+                    success: function(data) {
+                        // Reset the fields div on every Country selection
+                        $(".fields").empty();
 
-                //         //var $el = $('#Country');
-                //         $.each(data, function(key, value) {
-                //             //$el.append($("<option></option>")
-                //             //.attr("value", value).text(value));
-                //             console.log('Helloooo')
-                //         });
-                //     },
-                // });
-                
-                // Since GET is not working as per our chat this is sample data that I have added here
-                var myMap = new Map();
-                myMap.set("India", ['Name', 'City']);
-                myMap.set("USA", ['Phone']);
-
-                // Reset the fields div on every Country selection
-                $(".fields").empty();
-
-                var optionsData = myMap.get($(this).val());
-                $(fields).append('<label>Enter one or more field to search for Address</label><br><br>');
-                $.each(optionsData, function( index, value ) {
-                        $(fields).append('<div><label>', value, '&nbsp&nbsp</label><input type="text" name="mytext[]"/><br><br></div>');
+                        $(fields).append('<label>Enter one or more field to search for Address</label><br><br>');
+                        $.each(data, function(key, value) {
+                            $(fields).append('<div><label>', key, '&nbsp&nbsp</label><input type="text" name="mytext[]"/><br><br></div>');
+                            console.log(key, value);
+                        });
+                        $("#search").show();
+                    },
                 });
-                $("#search").show();
             });
 
             // On Search click, make GET with input fields provided to get associated addresses
