@@ -89,26 +89,30 @@
         </script>
     </head>
     <body>
-        <!-- Div for Searching address -->
-        <div id="searchAddress">
-            <label>Select Country to search for Address</label><br><br>
-            <select name = "Country" id = "Country">
-                <option value="Select Country">Choose Country</option>
-            </select>
-            <br><br>
-            <form>
-                <div class="fields" id="fields"></div>
-                <div>
-                    <button type="button" id="search">Search</button>
-                </div>
-            </form>
-        </div>
+        <div id="parentDiv" style="border: solid green; width: 400px; margin: auto; padding: 10px; font-family:'Courier New'; background-color: rgb(199, 238, 199);">
+            <b><text style="color:black; font-family:'Courier New';font-size:30px; padding-left: 20px;">Address Finder</text></b><br>
+            <hr><br>
+            <!-- Div for Searching address -->
+            <div id="searchAddress">
+                <label>Select Country to search for Address</label><br><br>
+                <select name = "Country" id = "Country" style="font-family:'Courier New';">
+                    <option value="Select Country">Choose Country</option>
+                </select>
+                <br><br>
+                <form>
+                    <div class="fields" id="fields"></div>
+                    <div>
+                        <button type="button" id="search" style="font-family:'Courier New';">Search</button>
+                    </div>
+                </form>
+            </div>
 
-        <!-- Div for displaying address -->
-        <div id="displayAddress">
-            <div id="addressdiv"></div>
-            <div>
-                <button type="button" id="newSearch">Search New Address</button>
+            <!-- Div for displaying address -->
+            <div id="displayAddress">
+                <div id="addressdiv"></div>
+                <div>
+                    <button type="button" id="newSearch" style="font-family:'Courier New';">Search New Address</button>
+                </div>
             </div>
         </div>
     </body>
