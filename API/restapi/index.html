@@ -4,7 +4,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
         $(document).ready(function(){
+            // Initially hid all the buttons
             $("#search").hide();
+            $("#newSearch").hide();
+
+            // On page load make get call to get all the countries and display it in Select
             $.ajax({
                 url: 'http://localhost:5000/',
                 data: null,
@@ -21,56 +25,104 @@
                     });
                 },
             });
+
+            // On Country selection from dropdown make get call to get address fields for that selection
+            // Display the fields returned
+            // Show Search button
             $( "#Country" ).change(function() {
-                // Make GET call to get selected country specific fields
-                // <div>
-                //     <asp:Label id="OutputLabel" runat="server"></asp:Label>           
-                // </div>
-                $.ajax({
-                    url: 'http://localhost:5000/Country/USA',
-                    data: null,
-                    type: 'GET',
-                    dataType: 'json',
-                    beforeSend: function (req) {
-                        req.setRequestHeader('Accept', 'text/plain');
-                    },
-                    success: function(data) {
+                // TODO: Make GET call to get selected country specific fields
+                // $.ajax({
+                //     url: 'http://localhost:5000/Country/USA',
+                //     data: null,
+                //     type: 'GET',
+                //     dataType: 'json',
+                //     beforeSend: function (req) {
+                //         req.setRequestHeader('Accept', 'text/plain');
+                //     },
+                //     success: function(data) {
 
-                        //var $el = $('#Country');
-                        $.each(data, function(key, value) {
-                            //$el.append($("<option></option>")
-                            //.attr("value", value).text(value));
-                            console.log('Helloooo')
-                        });
-                    },
-                });
+                //         //var $el = $('#Country');
+                //         $.each(data, function(key, value) {
+                //             //$el.append($("<option></option>")
+                //             //.attr("value", value).text(value));
+                //             console.log('Helloooo')
+                //         });
+                //     },
+                // });
                 
+                // Since GET is not working as per our chat this is sample data that I have added here
                 var myMap = new Map();
-                myMap.set("India", ['name', 'city']);
-                myMap.set("USA", ['phone']);
+                myMap.set("India", ['Name', 'City']);
+                myMap.set("USA", ['Phone']);
 
+                // Reset the fields div on every Country selection
                 $(".fields").empty();
+
                 var optionsData = myMap.get($(this).val());
-                $(fields).append('<label>Enter one or more field to search for Address</label><br>');
+                $(fields).append('<label>Enter one or more field to search for Address</label><br><br>');
                 $.each(optionsData, function( index, value ) {
-                        $(fields).append('<div><label for= "Name">', value, '</label><input type="text" name="mytext[]"/><br><br></div>');
+                        $(fields).append('<div><label>', value, '&nbsp&nbsp</label><input type="text" name="mytext[]"/><br><br></div>');
                 });
                 $("#search").show();
+            });
+
+            // On Search click, make GET with input fields provided to get associated addresses
+            // Hide the search div, render all the returned addresses and show Search New Address button
+            $("#search").click(function() {
+                // TODO: Make a GET call to get the address based on submitted form with input fields
+
+                // GET is not integrated here hence hardcoded address as of now
+                var addline1 = "Seattle University";
+                var addline2 = "111 Madison St";
+                var addline3 = "Seattle, WA 98121";
+                var addresses = [[addline1, addline2, addline3], [addline3, addline2, addline1]]
+
+                $("#searchAddress").hide();
+                if (addresses == null) {
+                    $(addressdiv).append('No matching address found for the search input<br><br>');
+                } else {
+                    // Render the available addresses
+                    $.each(addresses, function(index, value) {
+                        $(addressdiv).append('Address ', index + 1);
+                        $.each(value, function(index, line) {
+                            $(addressdiv).append('<div>', line, '</div><br>');
+                        });
+                        $(addressdiv).append('<br>');
+                    });
+                }
+                $("#newSearch").show();
+
+            });
+
+            // Reload page to home page on clicking Search new address
+            $("#newSearch").click(function() {
+                location.reload();
             });
         });
         </script>
     </head>
     <body>
-        <label>Select Country to search for Address</label><br>
-        <select name = "Country" id = "Country">
-            <option value="Select Country">Choose Country</option>
-        </select>
-        <br><br>
-        <form>
-            <div class="fields" id="fields"></div>
+        <!-- Div for Searching address -->
+        <div id="searchAddress">
+            <label>Select Country to search for Address</label><br><br>
+            <select name = "Country" id = "Country">
+                <option value="Select Country">Choose Country</option>
+            </select>
+            <br><br>
+            <form>
+                <div class="fields" id="fields"></div>
+                <div>
+                    <button type="button" id="search">Search</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Div for displaying address -->
+        <div id="displayAddress">
+            <div id="addressdiv"></div>
             <div>
-                <button type="button" id="search">Search</button>
+                <button type="button" id="newSearch">Search New Address</button>
             </div>
-        </form>
+        </div>
     </body>
 </html>
