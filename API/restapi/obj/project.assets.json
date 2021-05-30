@@ -2387,7 +2387,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -6377,30 +6377,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bengr\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/priyanka/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bengr\\Documents\\CPSC5200SWArchitecture\\GlobalAddressAPI\\API\\restapi\\restapi.csproj",
+      "projectUniqueName": "/Users/priyanka/Desktop/PriyankaSeattleUniversity/SoftwareArchitecture/GlobalAddressAPI/API/restapi/restapi.csproj",
       "projectName": "restapi",
-      "projectPath": "C:\\Users\\bengr\\Documents\\CPSC5200SWArchitecture\\GlobalAddressAPI\\API\\restapi\\restapi.csproj",
-      "packagesPath": "C:\\Users\\bengr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bengr\\Documents\\CPSC5200SWArchitecture\\GlobalAddressAPI\\API\\restapi\\obj\\",
+      "projectPath": "/Users/priyanka/Desktop/PriyankaSeattleUniversity/SoftwareArchitecture/GlobalAddressAPI/API/restapi/restapi.csproj",
+      "packagesPath": "/Users/priyanka/.nuget/packages/",
+      "outputPath": "/Users/priyanka/Desktop/PriyankaSeattleUniversity/SoftwareArchitecture/GlobalAddressAPI/API/restapi/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\bengr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/priyanka/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net50"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6506,7 +6500,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

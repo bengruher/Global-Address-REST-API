@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            // Initially hid all the buttons
+            $("#search").hide();
+            $("#newSearch").hide();
+
+            // On page load make get call to get all the countries and display it in Select
+            $.ajax({
+                url: 'http://localhost:5000/',
+                data: null,
+                type: 'GET',
+                dataType: 'json',
+                beforeSend: function (req) {
+                    req.setRequestHeader('Accept', 'application/json');
+                },
+                success: function(data) {
+                    var $el = $('#Country');
+                    $.each(data, function(key, value) {
+                        $el.append($("<option></option>")
+                        .attr("value", value).text(value));
+                    });
+                },
+            });
+
+            // On Country selection from dropdown make get call to get address fields for that selection
+            // Display the fields returned
+            // Show Search button
+            $( "#Country" ).change(function() {
+                var url = 'http://localhost:5000/' + $("#Country").val();
+                $.ajax({
+                    url: url,
+                    data: null,
+                    type: 'GET',
+                    dataType: 'json',
+                    beforeSend: function (req) {
+                        req.setRequestHeader('Accept', 'text/plain');
+                    },
+                    success: function(data) {
+                        // Reset the fields div on every Country selection
+                        $(".fields").empty();
+
+                        $(fields).append('<label>Enter field/s to search an Address</label><br><br>');
+                        $.each(data, function(key, value) {
+                            $(fields).append('<div><label>', key, '&nbsp&nbsp</label><input style="display: inline-block; width: 200px; float: right;" type="text" name="mytext[]"/><br><br></div>');;
+                            console.log(key, value);
+                        });
+                        $("#search").show();
+                    },
+                });
+            });
+
+            // On Search click, make GET with input fields provided to get associated addresses
+            // Hide the search div, render all the returned addresses and show Search New Address button
+            $("#search").click(function() {
+                // TODO: Make a GET call to get the address based on submitted form with input fields
+
+                // GET is not integrated here hence hardcoded address as of now
+                var addline1 = "Seattle University";
+                var addline2 = "111 Madison St";
+                var addline3 = "Seattle, WA 98121";
+                var addresses = [[addline1, addline2, addline3], [addline3, addline2, addline1]]
+
+                $("#searchAddress").hide();
+                if (addresses == null) {
+                    $(addressdiv).append('No matching address found for the search input<br><br>');
+                } else {
+                    // Render the available addresses
+                    $.each(addresses, function(index, value) {
+                        $(addressdiv).append('Address ', index + 1);
+                        $.each(value, function(index, line) {
+                            $(addressdiv).append('<div>', line, '</div><br>');
+                        });
+                        $(addressdiv).append('<br>');
+                    });
+                }
+                $("#newSearch").show();
+
+            });
+
+            // Reload page to home page on clicking Search new address
+            $("#newSearch").click(function() {
+                location.reload();
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="parentDiv" style="border: solid green; width: 350px; margin: auto; padding: 20px; font-family:'Courier New'; background-color: rgb(199, 238, 199); text-align: center;">
+            <b><text style="color:black; font-family:'Courier New';font-size:30px;">Address Finder</text></b><br>
+            <hr><br>
+            <!-- Div for Searching address -->
+            <div id="searchAddress">
+                <label>Select Country to search an Address</label><br><br>
+                <select name = "Country" id = "Country" style="font-family:'Courier New';">
+                    <option value="Select Country">Choose Country</option>
+                </select>
+                <br><br>
+                <form>
+                    <div class="fields" id="fields"></div>
+                    <div>
+                        <button type="button" id="search" style="font-family:'Courier New';">Search</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Div for displaying address -->
+            <div id="displayAddress">
+                <div id="addressdiv"></div>
+                <div>
+                    <button type="button" id="newSearch" style="font-family:'Courier New';">Search New Address</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
