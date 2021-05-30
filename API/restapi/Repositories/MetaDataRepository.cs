@@ -3,9 +3,22 @@ using System.Linq;
 using LiteDB;
 using restapi.Interfaces;
 using restapi.Models;
+using restapi.Helpers;
+using System.IO;
+using System;
+// using System.Data.Entity;
 
 namespace restapi
 {
+    /*
+    public class MetaDataContext : DbContext
+    {
+        public MetaDataContext() : base("MetaDataContext") { }
+        public DbSet<Countries> Countries { get; set; }
+        public DbSet<Fields> Fields { get; set; }
+    }
+    */
+
     public class MetaDataRepository : IMetaDataRepository
     {
         const string DATABASE_FILE = "filename=metadata.db;mode=exclusive";
@@ -52,24 +65,22 @@ namespace restapi
 
         public void ReadConfig()
         {
-            /*
-            PublicJsonSerializer jsonSerializer = new PublicJsonSerializer();
-            Stream inputStream = readFile(ADDRESS_CONFIG_FILE); // FIXME
-            List<CountryFields> countryFormats = jsonSerializer.Deserialize<List<CountryFields>>(inputStream);
-            foreach(CountryField format in countryFormats)
+            using(Stream inputStream = File.Open(ADDRESS_CONFIG_FILE, FileMode.Open)) 
             {
-                // add to metadata database - need to populate all 3 tables
-                // 1. Add country Countries table
-                AddCountry(format.CountryName);
+                List<CountryFields> countryFormats = PublicJsonSerializer.Deserialize<List<CountryFields>>(inputStream);
+                foreach(CountryFields format in countryFormats)
+                {
+                    // add to metadata database - need to populate all 3 tables
+                    // 1. Add country Countries table
+                    // AddCountry(format.CountryName);
 
-                // 2. Add country fields to CountryFields table
-                AddField(format.CountryName, ) // FIXME - add parameters
+                    // 2. Add country fields to CountryFields table
+                    // AddField(format.CountryName, ) // FIXME - add parameters
 
-                // 3. Add field type to FieldTypes table if it doesn't already exist
-                AddFieldType() // FIXME - add parameters and either put existence check here or in AddFieldType()
-
+                    // 3. Add field type to FieldTypes table if it doesn't already exist
+                    // AddFieldType() // FIXME - add parameters and either put existence check here or in AddFieldType()
+                }
             }
-            */
         }
 
         public void GenCountryTables()
