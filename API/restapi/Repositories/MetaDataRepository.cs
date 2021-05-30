@@ -6,22 +6,21 @@ using restapi.Models;
 using restapi.Helpers;
 using System.IO;
 using System;
+using Microsoft.EntityFrameworkCore;
 // using System.Data.Entity;
 
 namespace restapi
 {
-    /*
     public class MetaDataContext : DbContext
     {
-        public MetaDataContext() : base("MetaDataContext") { }
+        public MetaDataContext() : base() { }
         public DbSet<Countries> Countries { get; set; }
         public DbSet<Fields> Fields { get; set; }
     }
-    */
 
     public class MetaDataRepository : IMetaDataRepository
     {
-        const string DATABASE_FILE = "filename=metadata.db;mode=exclusive";
+        // const string DATABASE_FILE = "filename=metadata.db;mode=exclusive";
         const string ADDRESS_CONFIG_FILE = "addressConfig.json";
 
         public IEnumerable<string> GetCountries() 
