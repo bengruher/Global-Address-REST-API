@@ -2,6 +2,8 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
         <script>
         $(document).ready(function(){
             // Initially hid all the buttons
@@ -41,50 +43,52 @@
                     },
                     success: function(data) {
                         // Reset the fields div on every Country selection
-                        $(".fields").empty();
+                        $("#address_fields").empty();
+                        $('#counter').val(1);
 
-                        $(fields).append('<label>Enter field/s to search an Address</label><br><br>');
+                        $(address_fields).append('<label>Enter field/s to search an Address</label><br><br>');
                         $.each(data, function(key, value) {
-                            $(fields).append('<div><label>', key, '&nbsp&nbsp</label><input style="display: inline-block; width: 200px; float: right;" type="text" name="mytext[]"/><br><br></div>');;
-                            console.log(key, value);
+                            add_inputs(key, value)
                         });
                         $("#search").show();
                     },
                 });
             });
 
-            // On Search click, make GET with input fields provided to get associated addresses
-            // Hide the search div, render all the returned addresses and show Search New Address button
-            $("#search").click(function() {
-                // TODO: Make a GET call to get the address based on submitted form with input fields
+            String.prototype.capitalize = function() {
+                return this.charAt(0).toUpperCase() + this.slice(1);
+            }
 
-                // GET is not integrated here hence hardcoded address as of now
-                var addline1 = "Seattle University";
-                var addline2 = "111 Madison St";
-                var addline3 = "Seattle, WA 98121";
-                var addresses = [[addline1, addline2, addline3], [addline3, addline2, addline1]]
+            function add_inputs(field_name, field_value) {
+                var counter = parseInt($('#counter').val());
+                
+                var html = '<div class="record style="width:500px;"><input pattern= ' + field_value + ' type="text" placeholder='+ field_name.capitalize() + ' name=' + field_name + ' id="name_' + counter + '" class="name_input" style="display: inline-block;"></div><br>';
+                
+                $('#address_fields').append(html);
+                $('#counter').val( counter + 1 );
+            }
 
-                $("#searchAddress").hide();
-                if (addresses == null) {
-                    $(addressdiv).append('No matching address found for the search input<br><br>');
-                } else {
-                    // Render the available addresses
-                    $.each(addresses, function(index, value) {
-                        $(addressdiv).append('Address ', index + 1);
-                        $.each(value, function(index, line) {
-                            $(addressdiv).append('<div>', line, '</div><br>');
+            function add_validations(field_name) {
+                $(field_name).each(function() {
+                    var regex = new RegExp($(this).attr("pattern"));
+                    $(this).rules("add", 
+                        {
+                            pattern: regex,
+                            required: true,
+                            messages: {
+                                required: "Value required.",
+                            }
                         });
-                        $(addressdiv).append('<br>');
-                    });
+                });
+            }
+
+            $('form#search_address_form').on('submit', function(event) {
+                var num_of_fields = parseInt($('#counter').val());
+                for (i = 1; i < num_of_fields; i++) {
+                    add_validations("#name_" + i);
                 }
-                $("#newSearch").show();
-
             });
-
-            // Reload page to home page on clicking Search new address
-            $("#newSearch").click(function() {
-                location.reload();
-            });
+            $("#search_address_form").validate();
         });
         </script>
     </head>
@@ -99,11 +103,10 @@
                     <option value="Select Country">Choose Country</option>
                 </select>
                 <br><br>
-                <form>
-                    <div class="fields" id="fields"></div>
-                    <div>
-                        <button type="button" id="search" style="font-family:'Courier New';">Search</button>
-                    </div>
+                <form id="search_address_form">
+                    <input type="hidden" id="counter" value="1">
+                    <div id="address_fields"></div>
+                    <div><button type="submit" id="search">Search</button></div>
                 </form>
             </div>
 
