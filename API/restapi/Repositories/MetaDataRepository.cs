@@ -92,8 +92,12 @@ namespace restapi
             // foreach country, replace country in query string and get fields for that country
             foreach(string country in countries)
             {
-                string queryString = "CREATE TABLE ";
-                queryString += country + "(";
+                // drop tables if they exist to recreate them in case columns have changed
+                string dropString = "DROP TABLE IF EXISTS \"" + country + "\";";
+                _context.Database.ExecuteSqlRaw(dropString);
+                
+                string queryString = "CREATE TABLE \"";
+                queryString += country + "\"(";
                 
                 // get fields
                 var countryFields = GetFields(country);
@@ -105,7 +109,7 @@ namespace restapi
                 {
                     if(!firstCol)
                         queryString += ", ";
-                    queryString += field.Key + " varchar(255)"; // FIXME - NULLABLE? 
+                    queryString += "\"" + field.Key + "\" varchar(255)"; // FIXME - NULLABLE? 
                     firstCol = false;
                 }
                 queryString += ");"; 

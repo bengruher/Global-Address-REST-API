@@ -103,7 +103,7 @@ namespace restapi
 
             // these functions create the metadata and data tables based on the configuration file
             metaRepo.ReadConfig();             // reads in addressConfig.json and adds address formats to metadata
-            // metaRepo.GenCountryTables();       // sql ddl to create tables for each country, depends on rows in the metadata
+            metaRepo.GenCountryTables();       // sql ddl to create tables for each country, depends on rows in the metadata
         }
     }
 }
