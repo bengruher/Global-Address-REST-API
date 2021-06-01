@@ -14,11 +14,13 @@ namespace restapi.Controllers
     {
         private readonly ILogger logger;
         private readonly IMetaDataRepository metadataRepository;
+        private readonly ICountriesRepository countriesRepository;
 
-        public CountryController(ILogger<CountryController> logger, IMetaDataRepository metadataRepository)
+        public CountryController(ILogger<CountryController> logger, IMetaDataRepository metadataRepository, ICountriesRepository countriesRepository)
         {
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this.metadataRepository = metadataRepository ?? throw new ArgumentNullException(nameof(metadataRepository));
+            this.countriesRepository = countriesRepository ?? throw new ArgumentNullException(nameof(countriesRepository));
         }
 
         [HttpGet("{countryName}")]
@@ -38,15 +40,19 @@ namespace restapi.Controllers
             return Ok(fields.Fields);
         }
 
-        /*
-        [HttpGet]
+        [HttpGet("search")]
         [ProducesResponseType(typeof(Address), 200)]
         public IActionResult SearchAddresses([FromBody] Dictionary<string, string> query)  // FIXME- not frombody?
         {
             HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-            var addressList = countryRepository.Search(query);
+            var addressList = countriesRepository.Search(query);
             return Ok(addressList);
         }
-        */
+
+        [HttpPost("{countryName}")]
+        public IActionResult AddAddress(string countryName, [FromBody] Dictionary<string, string> fields) // FIXME - not frombody?
+        {
+            return Ok(countryName);
+        }
     }
 }

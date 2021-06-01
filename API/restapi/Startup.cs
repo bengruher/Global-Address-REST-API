@@ -35,6 +35,7 @@ namespace restapi
 
             services.AddScoped<MetaDataContext, MetaDataContext>();
             services.AddScoped<IMetaDataRepository, MetaDataRepository>();
+            services.AddScoped<ICountriesRepository, CountriesRepository>();
 
             services.AddControllers();
             services
@@ -69,7 +70,6 @@ namespace restapi
                     Description = "CPSC 5200 REST Example"
                 });
             });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
