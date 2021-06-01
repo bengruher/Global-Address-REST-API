@@ -33,9 +33,9 @@ namespace restapi
         {
             // MOCK:
             Dictionary<string, string> mockFieldDict = new Dictionary<string, string>();
-            mockFieldDict.Add("Street", "TEXT");
-            mockFieldDict.Add("City", "TEXT");
-            mockFieldDict.Add("State", "TEXT");
+            mockFieldDict.Add("Street", "[0-9]{3}$");
+            mockFieldDict.Add("City", "[0-9]{4}$");
+            mockFieldDict.Add("State", "[0-9]{5}$");
             return new CountryFields(CountryName, mockFieldDict);
 
             /*
