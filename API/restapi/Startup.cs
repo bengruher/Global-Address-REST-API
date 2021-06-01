@@ -73,7 +73,7 @@ namespace restapi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IMetaDataRepository metaRepo)
         {
             if (env.IsDevelopment())
             {
@@ -100,6 +100,10 @@ namespace restapi
             {
                 endpoints.MapControllers();
             });
+
+            // these functions create the metadata and data tables based on the configuration file
+            metaRepo.ReadConfig();             // reads in addressConfig.json and adds address formats to metadata
+            // metaRepo.GenCountryTables();       // sql ddl to create tables for each country, depends on rows in the metadata
         }
     }
 }

@@ -32,27 +32,29 @@ namespace restapi
         public CountryFields GetFields(string CountryName) 
         {
             // MOCK:
+            /*
             Dictionary<string, string> mockFieldDict = new Dictionary<string, string>();
             mockFieldDict.Add("Street", "[0-9]{3}$");
             mockFieldDict.Add("City", "[0-9]{4}$");
             mockFieldDict.Add("State", "[0-9]{5}$");
             return new CountryFields(CountryName, mockFieldDict);
+            */
 
-            /*
-            Dictionary<string, Field> fieldDict = new Dictionary<string, Field>();
+            Dictionary<string, string> fieldDict = new Dictionary<string, string>();
 
-            var fields = _context.Fields.Select(c => c.CountryName == CountryName);
-            foreach(field in fields)
+            var fields = _context.Fields.Where(c => c.CountryName == CountryName);
+            foreach(Fields field in fields)
             {
                 fieldDict.Add(field.FieldName, field.TypeString);
             }
 
             return new CountryFields(CountryName, fieldDict);
-            */
         }
 
         public void ReadConfig()
         {
+            ClearTable("Countries");
+            ClearTable("Fields");
             using(Stream inputStream = File.Open(ADDRESS_CONFIG_FILE, FileMode.Open)) 
             {
                 List<CountryFields> countryFormats = PublicJsonSerializer.Deserialize<List<CountryFields>>(inputStream);
@@ -112,6 +114,10 @@ namespace restapi
                 // _context.Database.CreateIfNotExists();
                 _context.Database.ExecuteSqlRaw(queryString);
             }
+        }
+        public void ClearTable(string tableName)
+        {
+            _context.Database.ExecuteSqlRaw($"TRUNCATE TABLE {tableName}");
         }
     }
 }

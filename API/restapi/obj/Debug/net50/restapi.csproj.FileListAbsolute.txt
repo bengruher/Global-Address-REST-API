@@ -242,4 +242,3 @@ C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\bin
 C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\bin\Debug\net50\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\bin\Debug\net50\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\obj\Debug\net50\restapi.csproj.AssemblyReference.cache
-C:\Users\bengr\Documents\CPSC5200SWArchitecture\GlobalAddressAPI\API\restapi\bin\Debug\net50\temp.json

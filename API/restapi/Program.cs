@@ -8,6 +8,9 @@ using System.IO;
 using System.Diagnostics.CodeAnalysis;
 using Serilog.Events;
 using System.Diagnostics;
+using restapi.Interfaces;
+using restapi.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace restapi
 {
@@ -39,6 +42,9 @@ namespace restapi
                 .CreateLogger();
 
             Serilog.Debugging.SelfLog.Enable(msg => Debug.WriteLine(msg));
+
+
+            
 
             try
             {
