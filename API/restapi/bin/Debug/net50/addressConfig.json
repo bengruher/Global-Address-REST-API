@@ -1,24 +1,18 @@
-{
-    "USA" : [
-        {
-            "Street" : "TEXT"
-        },
-        {
-            "City" : "TEXT"
-        },
-        {
+[
+    {
+        "CountryName" : "USA",
+        "Fields" : {
+            "Street" : "TEXT",
+            "City" : "TEXT",
             "State" : "TEXT"
         }
-    ],
-    "Canada" : [
-        {
-            "Street" : "TEXT"
-        },
-        {
-            "City" : "TEXT"
-        },
-        {
+    },
+    {
+        "CountryName" : "Canada",
+        "Fields" : {
+            "Street" : "TEXT",
+            "City" : "TEXT",
             "Province" : "TEXT"
         }
-    ]
-}
+    }
+]

@@ -9,7 +9,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using restapi.Interfaces;
+using restapi.Models;
 using Serilog;
+using Microsoft.EntityFrameworkCore;
 
 namespace restapi
 {
@@ -29,6 +31,9 @@ namespace restapi
             services.AddHttpContextAccessor();
             services.AddSingleton((ILogger)Log.Logger);
 
+            services.AddDbContext<MetaDataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<MetaDataContext, MetaDataContext>();
             services.AddScoped<IMetaDataRepository, MetaDataRepository>();
 
             services.AddControllers();

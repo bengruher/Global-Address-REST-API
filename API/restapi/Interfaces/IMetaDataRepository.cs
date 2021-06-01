@@ -10,9 +10,8 @@ namespace restapi.Interfaces
 
         // functions for adding metadata during reading of config file at startup
         void ReadConfig();
-        // void AddCountry();
-        // void AddField();
-        // void AddFieldType();
+        void AddCountry(string CountryName);
+        void AddField(string CountryName, string FieldName, string TypeString);
 
         // functions for creating country tables from metadata configuation
         void GenCountryTables();

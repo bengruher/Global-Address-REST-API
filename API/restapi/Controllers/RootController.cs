@@ -12,7 +12,6 @@ namespace restapi.Controllers
     public class RootController : Controller
     {
         private readonly IMetaDataRepository metadataRepository;
-
         private readonly ILogger logger;
 
         public RootController(ILogger<RootController> logger, IMetaDataRepository metadataRepository)
@@ -21,7 +20,7 @@ namespace restapi.Controllers
             this.metadataRepository = metadataRepository ?? throw new ArgumentNullException(nameof(metadataRepository));
             
             // these files create the metadata and data tables based on the configuration file. might move these to a more suitable location
-            // metadataRepository.ReadConfig();             // reads in addressConfig.json and adds address formats to metadata
+            metadataRepository.ReadConfig();             // reads in addressConfig.json and adds address formats to metadata
             // metadataRepository.GenCountryTables();       // sql ddl to create tables for each country, depends on rows in the metadata
         }
 

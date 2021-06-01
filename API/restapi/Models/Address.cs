@@ -11,5 +11,10 @@ namespace restapi.Models
     public class Address 
     {
         public Dictionary<string, string> Fields = new Dictionary<string, string>();    // key: field name, value: field value
+
+        public Address(Dictionary<string, string> fields)
+        {
+            Fields = fields;
+        }
     }
 }
