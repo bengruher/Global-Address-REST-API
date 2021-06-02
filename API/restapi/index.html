@@ -12,7 +12,7 @@
 
             // On page load make get call to get all the countries and display it in Select
             $.ajax({
-                url: 'http://localhost:5000/',
+                url: 'http://localhost:59969/',
                 data: null,
                 type: 'GET',
                 dataType: 'json',
@@ -32,7 +32,7 @@
             // Display the fields returned
             // Show Search button
             $( "#Country" ).change(function() {
-                var url = 'http://localhost:5000/' + $("#Country").val();
+                var url = 'http://localhost:59969/' + $("#Country").val();
                 $.ajax({
                     url: url,
                     data: null,
