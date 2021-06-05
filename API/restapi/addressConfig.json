@@ -2,32 +2,36 @@
     {
         "CountryName" : "Argentina",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Street address 1 / Post Office Box / Bussiness name" : "[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z0-9.]+?\\s[A-Za-z0-9]+?",
-            "Street address 2 / Central Post Office" : "[A-Za-z0-9]+\\s[A-Za-z0-9.]+?\\s[A-Za-z0-9]+?\\s[A-Za-z0-9]+?",
-            "City" : "[A-za-z0-9]+",
-            "Province" : "[A-za-z0-9]+?",
-            "Postalcode" : "[A-za-z0-9]+?",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Bussiness name" : "[[A-Za-z]+\\s[A-Za-z-.]+?\\s?[A-Za-z-.]+?",
+            "Street address" : "[A-Za-z]+\\s[A-Za-z0-9,]+\\s[A-Za-z0-9.]+?\\s[A-Za-z0-9]+?",
+            "Post Office Box" : "[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s[A-Za-z0-9]+?\\s[A-Za-z0-9]+?",
+            "Central Post Office" : "[A-za-z0-9]+\\s[A-za-z0-9]+?",
+            "City" : "[A-za-z0-9]+\\s[A-za-z0-9]+?",
+            "Postal code" : "[A-za-z0-9]+?",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Australia",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
-            "Street address 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Street address 2" : "[A-Za-z]+\\s[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
-            "City, State, Postalcode" : "[A-za-z]+\\s[A-za-z]+\\s[A-Za-z0-9]{2}\\s[A-Za-z0-9]{4}?",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
+            "Street address 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+?\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Street address 2" : "[A-Za-z0-9-/]+?\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
+            "City" : "[A-za-z]+\\s[A-za-z]+?",
+            "State" : "[A-Za-z0-9]{2}",
+            "Postal code" : "[A-Za-z0-9]{3}?",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Austria",
         "Fields" : {
-            "Mrs./Recipient" : "[A-Za-z.]+\\s[A-Za-z]+\\s[A-Za-z]+?",
-            "Name, Street Address" : "[A-Za-z.]+\\s[A-Za-z0-9-]+?\\s?[A-Za-z0-9]+?",
+            "Receipient name" : "[A-Za-z.]+\\s[A-Za-z.]+\\s[A-Za-z]+?",
+            "Street Address" : "[A-Za-z.]+\\s[A-Za-z0-9-]+?\\s?[A-Za-z0-9]+?",
             "Street Address 2" : "[A-Za-z]+\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
-            "Postalcode, City" : "[A-za-z]+\\s[A-za-z]+\\s[A-Za-z0-9]{2}\\s[A-Za-z0-9]{2}?",
+            "Postal code" : "[A-za-z0-9]+\\-?[A-za-z0-9]+",
+            "City" : "[A-Za-z]+",
             "Country" : "[A-Za-z]+"
         }
     },
@@ -44,9 +48,10 @@
     {
         "CountryName" : "Brazil",
         "Fields" : {
-            "Name" : "(Sr.|Jr.)?\\s?[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
-            "Street name, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, ProvinceCode" : "[A-Za-z]+\\s[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
+            "Receipient name" : "(Sr.|Jr.)?\\s?[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
+            "Street name" : "[A-Za-z0-9]+\\s\\-?\\s?[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" : "[0-9a-zA-Z]+",
+            "City-ProvinceCode" : "[A-Za-z]+\\-?\\s?[A-Za-z0-9]+?\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
             "Postal code" : "[0-9]{4}\\-[0-9]{3}",
             "Country" : "[A-Za-z]+"
         }
@@ -54,26 +59,42 @@
     {
         "CountryName" : "Canada",
         "Fields" : {
-            "Name" : "[A-Za-z]+\\s[A-Za-z]+",
-            "Bussiness Name" : "[A-Za-z]+\\s[A-Za-z]+",
-            "Street" : "[0-9]+\\-[0-9]+\\s[0-9]?\/?[0-9]?\\s[A-Za-z]+\\s[A-Za-z]+\\s\b(Ave|W|Rd|E|STREET|NW|SW|SE|NE)?",
-            "City, Province, Postalcode " : "[A-za-z]+\\s[A-za-z]+\\s[A-Za-z0-9]{2}\\s[A-Za-z0-9]{2}?",
+            "Receipient name" : "[A-Za-z]+\\s[A-Za-z]+",
+            "Bussiness name" : "[A-Za-z]+\\s[A-Za-z]+",
+            "Street Address" : "[0-9]+\\-[0-9]+\\s[0-9]?\/?[0-9]?\\s[A-Za-z]+\\s[A-Za-z]+\\s\b(Ave|W|Rd|E|STREET|NW|SW|SE|NE)?",
+            "City" : "[A-za-z]+\\s[A-za-z]+?",
+            "Province" : "[A-Za-z0-9]{1}",
+            "Postal code" : "[A-Za-z0-9]{2}\\s[A-Za-z0-9]{2}",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Chile", 
         "Fields" : {
-            "Street" : "[0-9]+\\-[0-9]+\\s[0-9]?\/?[0-9]?\\s[A-Za-z]+\\s[A-Za-z]+\\s\b(Ave|W|Rd|E|STREET|NW|SW|SE|NE)?",
+            "Receipient name" : "[A-Za-z]+\\s[A-Za-z]+",
+            "Street Address" : "[0-9]+\\-[0-9]+\\s[0-9]?\/?[0-9]?\\s[A-Za-z]+\\s[A-Za-z]+\\s\b(Ave|W|Rd|E|STREET|NW|SW|SE|NE)?",
             "Number" : "[0-9]+",
             "Town" : "[A-za-z]+\\s[A-za-z]+\\s[A-Za-z0-9]{2}\\s[A-Za-z0-9]{2}?",
             "Country" : "[A-Za-z]+"
         }
     },
     {
+        "CountryName" : "China",
+        "Fields" : {
+            "Receipient name" : "(Mr.|Ms.|Mrs.|Miss.)?\\s?\\[A-Za-z]+?\\s[A-za-z]+?",
+            "Bussiness name" : "[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+",
+            "Street Address" : "[0-9]+\\s[A-Za-z]+\\s[A-Za-z]+",
+            "District" : "[A-Za-z]+\\s[A-Za-z]+",
+            "City" : "[A-za-z]+\\s[A-za-z]+?",
+            "Province" : "[A-Za-z]+",
+            "Postal code" : "[0-9]{5}",
+            "Country" : "[A-Za-z]+"
+        }
+    },
+    {
         "CountryName" : "Costa Rica",
         "Fields" : {
-            "Street" : "[0-9]+\\-[0-9]+\\s[0-9]?\/?[0-9]?\\s[A-Za-z]+\\s[A-Za-z]+\\s\b(Ave|W|Rd|E|STREET|NW|SW|SE|NE)?",
+            "Street Address" : "[0-9]+\\-[0-9]+\\s[0-9]?\/?[0-9]?\\s[A-Za-z]+\\s[A-Za-z]+\\s\b(Ave|W|Rd|E|STREET|NW|SW|SE|NE)?",
             "Number" : "[0-9]+",
             "Town" : "[A-za-z]+\\s[A-za-z]+\\s[A-Za-z0-9]{2}\\s[A-Za-z0-9]{2}?",
             "Country" : "[A-Za-z]+"
@@ -82,7 +103,7 @@
     {
         "CountryName" : "Crimea", 
         "Fields" : {
-            "Street" : "[0-9]+\\-[0-9]+\\s[0-9]?\/?[0-9]?\\s[A-Za-z]+\\s[A-Za-z]+\\s\b(Ave|W|Rd|E|STREET|NW|SW|SE|NE)?",
+            "Street Address" : "[0-9]+\\-[0-9]+\\s[0-9]?\/?[0-9]?\\s[A-Za-z]+\\s[A-Za-z]+\\s\b(Ave|W|Rd|E|STREET|NW|SW|SE|NE)?",
             "Number" : "[0-9]+",
             "Town" : "[A-za-z]+\\s[A-za-z]+\\s[A-Za-z0-9]{2}\\s[A-Za-z0-9]{2}?",
             "Country" : "[A-Za-z]+"
@@ -91,36 +112,44 @@
     {
         "CountryName" : "Czech Republic",
         "Fields" : {
-            "Name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, City, Postoffice" : "[A-Za-z0-9]{2}\\s[A-Za-z0-9]{1}\\s[A-za-z]+\\s[A-za-z0-9]+",
+            "Receipient name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street Address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+?",
+            "Building number" : "[0-9]+\/?[0-9]+",
+            "Postal code" : "[A-Za-z0-9]{2}\\s[A-Za-z0-9]{1}",
+            "City" : "[A-za-z]+",
+            "Postoffice number" : "[0-9]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Denmark", 
         "Fields" : {
-            "Name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Countrycode, Postalcode, City, Zone" : "[A-Za-z0-9-]{5}\\s[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9.]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[A-Za-z]+?\\-?[0-9]+",
+            "City" : "[A-Za-z]+",
+            "Zone" : "[A-Za-z.]",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Estonia",
         "Fields" : {
-            "Name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+",
-            "Postalcode, City" : "[A-Za-z0-9-]{4}\\s[A-Za-z0-9]+",
+            "Receipient name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[A-Za-z0-9-]{4}",
+            "City" : "[A-Za-z0-9]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Fiji",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Bussiness Name(optional)" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Street" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\s[A-Za-z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Bussiness name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street Address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\s[A-Za-z0-9]+?\\s[a-zA-Z0-9]+?",
             "City" : "[a-zA-z]+",
             "Country" : "[A-Za-z]+"
         }
@@ -128,66 +157,76 @@
     {
         "CountryName" : "Finland",
         "Fields" : {
-            "Name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Countrycode, Postalcode, City, Zone" : "[A-Za-z0-9-]{5}\\s[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[A-Za-z0-9-]{5}\\s[A-Za-z0-9]+",
+            "District" : "[A-Z]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Taiwan", 
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Bussiness Name(optional)" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Building number, Street, Section of Street" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\s[A-Za-z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, Island name, Postalcode" : "[a-zA-z]+\\s[a-zA-z]+\\s[a-zA-Z0-9]{4}",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Bussiness name" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Building number" : "[A-Za-z0-9]+\/[a-zA-Z0-9]+?\\,?\\s?[A-Za-z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Street address" : "[a-zA-Z]+\\s[a-zA-Z0-9]+\\s[a-zA-Z0-9]+",
+            "Section of street" : "[A-Za-z.]+\\s[0-9]+",
+            "City" : "[a-zA-z]+\\s[a-zA-z]+",
+            "Island name" : "[A-Za-z]+",
+            "Postal code" : "[a-zA-Z0-9]{4}",
             "Country" : "[A-Za-z,]+\\s[a-zA-Z.]+"
         }
     },
     {
         "CountryName" : "France",
         "Fields" : {
-            "Name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Building number, Streetaddress" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, City, Zone" : "[A-Za-z0-9]{4}\\s[A-Za-z0-9]+\\s[A-za-z]+",
+            "Receipient name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Building number" : "[A-Za-z0-9]+",
+            "Street address" : "[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Postal code" : "[A-Za-z0-9]{4}",
+            "City" : "[A-Za-z0-9]+\\s[A-Za-z0-9]",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Germany",
         "Fields" : {
-            "Name" : "[A-Za-z]+\\s[A-Za-z]+",
-            "Bussiness Name(optional)" : "[A-Za-z]+\\s[A-Za-z]+",
+            "Receipient name" : "[A-Za-z]+\\s[A-Za-z]+",
+            "Bussiness name" : "[A-Za-z]+\\s[A-Za-z]+",
             "Street address" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, City " : "[A-Za-z0-9]{4}\\s[A-Za-z0-9]+?\\s[A-za-z]+?",
+            "Postal code" : "[A-Za-z0-9]{4}",
+            "City" : "[A-Za-z0-9]+?\\s[A-za-z]+?",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Great Britain",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Bussiness Name(optional)" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Bussiness name" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
             "Street address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\s[A-Za-z0-9]+?\\s[a-zA-Z0-9]+?",
             "City" : "[A-Za-z]+",
-            "Postalcode" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+",
+            "Postal code" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+",
             "Country" : "[A-Za-z]+\\s[a-zA-Z]+"
         }
     },
     {
         "CountryName" : "Greenland",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9/,]+?\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "P.O.Box, Box number" : "[A-Za-z0-9.]+\\s[A-Za-z]+\\s[A-Za-z0-9]+",
-            "Postalcode, District" : "[a-zA-z0-9]+\\s[a-zA-z0-9,.]+?[a-zA-z0-9,.]+?\\s?[a-zA-z0-9]+?",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9/,]+?\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "P.O.Box number" : "[A-Za-z0-9.]+\\s[A-Za-z]+\\s[A-Za-z0-9]+",
+            "Postal code" : "[a-zA-z0-9-]+\\s[a-zA-z0-9]+?",
+            "District" : "[A-Za-z]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Hong Kong",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
             "Floor number" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9/,]+?\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
             "Building name" : "[A-Za-z0-9]+\\s[A-Za-z]+\\s[A-Za-z]+",
             "District" : "[a-zA-z0-9]+\\s[a-zA-z0-9,.]+?[a-zA-z0-9,.]+?\\s?[a-zA-z0-9]+?",
@@ -197,88 +236,99 @@
     {
         "CountryName" : "Iceland",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9/,]+?\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "P.O.Box, Box number" : "[A-Za-z0-9.]+\\s[A-Za-z]+\\s[A-Za-z0-9]+",
-            "Country code, Postalcode, Locality" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+?[a-zA-z0-9]+?\\s?[a-zA-z0-9]+?",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9/,]+?\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "P.O.Box number" : "[A-Za-z0-9.]+\\s[A-Za-z]+?\\s?[A-Za-z0-9]+?",
+            "Country code" : "[a-zA-z0-9]+?",
+            "Postal code" :"[0-9]{2}",
+            "Locality" : "[A-Za-z]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "India",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Streetaddress 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Streetaddress 2" : "[A-Za-z]+\\s[A-Za-z]+",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Street address 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Street address 2" : "[A-Za-z]+\\s[A-Za-z]+",
             "Locality" : "[A-za-z]+\\s[A-Za-z]+",
-            "City, Postalcode" : "[A-Za-z0-9]+?\\s?[A-Za-z]+?\\s?[0-9]{5}",
+            "City" : "[A-Za-z0-9]+\\s?[A-Za-z]+?",
+            "Postal code" : "[0-9]{5}",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Indonesia",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Streetaddress 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Streetaddress 2" : "[A-Za-z]+\\s[A-Za-z]+",
-            "City, Postalcode" : "[A-za-z]+\\s[A-Za-z0-9]+",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Street address 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Street address 2" : "[A-Za-z]+\\s[A-Za-z]+",
+            "City" : "[A-za-z]+",
+            "Postal code" : "[A-Za-z0-9]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Ireland",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
             "Bussiness name" : "[A-Za-z]+\\s[A-Za-z]+",
-            "Streetaddress" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, Postalcode" : "[A-za-z0-9]+\\s[A-Za-z0-9]+",
+            "Street address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "City" : "[A-za-z0-9]+",
+            "Postal code" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Isle Of Man",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Bussiness Name(optional)" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Bussiness name" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
             "Street address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\s[A-Za-z0-9]+?\\s[a-zA-Z0-9]+?",
             "City" : "[A-Za-z]+",
-            "Postalcode" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+",
+            "Postal code" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+",
             "Country" : "[A-Za-z]+\\s[a-zA-Z]+"
         }
     },
     {
         "CountryName" : "Israel",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Streetaddress 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, Postalcode" : "[A-za-z0-9]+\\s[A-Za-z0-9]+",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Street address 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "City" : "[A-za-z0-9]+\\s[A-Za-z0-9]+",
+            "Postal code" : "[a-zA-Z-]+?[0-9]{4}",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Italy",
         "Fields" : {
-            "Name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Building number, Streetaddress" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, City, Province code" : "[A-Za-z0-9]{4}\\s[A-Za-z0-9]+\\s[A-za-z]+",
+            "Receipient name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Building number" : "[0-9]+\/[0-9]+",
+            "Street address" : "[a-zA-z0-9]+\\s[a-zA-Z0-9]+\\s[a-zA-Z0-9]+?",
+            "Postal code" : "[A-Za-z0-9]{4}",
+            "City" : "[A-Za-z0-9]+",
+            "Province code" : "[A-za-z]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Japan",
         "Fields" : {
-            "Name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Building number, Streetaddress" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, Postalcode" : "[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-za-z0-9-]+",
+            "Receipient name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Building number" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?",
+            "Street address" : "[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "City" : "[A-Za-z0-9]+",
+            "Postal code" : "[0-9]{2}\\-?[0-9]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Korea",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
             "House number" : "[A-Za-z0-9]+?\\s[A-Za-z]+?\\s[A-Za-z]+?\\s?[A-Za-z-]+?",
-            "Subdivision" : "[A-Za-z0-9-]+\\s",
+            "Sub division" : "[A-Za-z0-9-]+\\s",
             "City" : "[A-Za-z-]+",
             "Province" : "[a-zA-z0-9]+",
             "Country" : "[A-Za-z]+\\s[a-zA-Z]+"
@@ -287,9 +337,10 @@
     {
         "CountryName" : "Latvia",
         "Fields" : {
-            "Name" : "(Sr.|Jr.)?\\s?[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
-            "Street name, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, ProvinceCode" : "[A-Za-z]+\\s[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
+            "Receipient name" : "(Sr.|Jr.)?\\s?[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
+            "Street name" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Building number" : "[0-9]+\/?[0-9]+",
+            "City" : "[A-Za-z]+\\s[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
             "Postal code" : "[0-9]{4}\\-[0-9]{3}",
             "Country" : "[A-Za-z]+"
         }
@@ -297,66 +348,79 @@
     {
         "CountryName" : "Luxembourg",
         "Fields" : {
-            "Name" : "(Sr.|Jr.|M.)?\\s?[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
-            "Street name, Building number" : "[A-Za-z0-9-.,]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, ProvinceCode" : "[A-Za-z]+\\s[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
-            "Country code, Postal code, City" : "[a-zA-Z0-9-]\\s[a-zA-Z]+",
+            "Receipient name" : "(Sr.|Jr.|M.)?\\s?[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
+            "Street name" : "[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "City" : "[A-Za-z]+",
+            "Postal code" : "[A-z]\\-[0-9a-zA-Z]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Malaysia",
         "Fields" : {
-            "Name" : "(Sr.|Jr.|M.)?\\s?[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
-            "House Number, Building name" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+?\\s?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, ProvinceCode" : "[A-Za-z]+\\s[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
-            "State" : "[a-zA-Z0-9-]\\s[a-zA-Z]+",
+            "Receipient name" : "(Sr.|Jr.|M.)?\\s?[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+\\s?[A-Za-z]+?\\s?",
+            "House Number" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+?",
+            "Building name" : "[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Postalcode" : "[0-9]{4}",
+            "City" : "[A-Za-z]+",
+            "State" : "[a-zA-Z0-9]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Mexico",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?",
-            "Street name, Building number" : "[A-Za-z0-9-.,]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Nieghborhood, Village" : "[A-Za-z]+\\s[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?",
-            "Postal code, Locality, Province" : "[a-zA-Z0-9]+\\s[a-zA-Z,]+\\s[a-zA-Z,.]+",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?",
+            "Street name" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+",
+            "Building number" : "[0-9]+\\s?\\-?\\s?[0-9}+",
+            "Nieghborhood" : "[A-Za-z]+\\s[A-Za-z0-9]+\\s[A-Za-z0-9]+?",
+            "Village" : "[A-Za-z0-9]+\\s?[A-Za-z0-9]+?",
+            "Postal code" : "[0-9]{4}",
+            "City" : "[a-zA-Z,]+",
+            "Province" : "[a-zA-z0-9.]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Netherlands",
         "Fields" : {
-            "Name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, Town" : "[A-Za-z0-9-]{5}\\s[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z]+\\s[A-Za-z]+",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[A-Za-z0-9-]{5}",
+            "Town" : "[A-Za-z0-9]+\\s[A-za-z.]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "New Zealand",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
             "Apartment number" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "House number, Street name" : "[A-Za-z0-9]+\\s[A-Za-z]+\\s?[A-Za-z]+?",
-            "City, Postalcode" : "[A-za-z]+\\s[A-Za-z0-9]+",
+            "House number" : "[A-Za-z0-9]+\\s",
+            "Street name" : "[A-Za-z]+\\s?[A-Za-z]+?",
+            "City" : "[A-za-z]+",
+            "Postal code" : "[A-Za-z0-9]+",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Norway",
         "Fields" : {
-            "Name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Country code, Postalcode, Town" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[A-Za-z0-9-]+[A-Za-z0-9]+",
+            "Town" : "[A-za-z]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Oman",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "BP, PO number" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Post office number" : "[a-zA-Z]+\\s[0-9]+\\-?\\s?[a-zA-Z]+?",
             "Postcode" : "[0-9]{2}",
             "City" : "[A-za-z-]+\\s[A-Za-z0-9]+?",
             "Country" : "[A-Za-z]+"
@@ -365,56 +429,66 @@
     {
         "CountryName" : "Pakistan",
         "Fields" : {
-            "Name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Streetaddress 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Streetaddress 2" : "[A-Za-z0-9]+\\s[A-Za-z0-9]+",
+            "Receipient name" : "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Street address 1" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\.?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Street address 2" : "[A-Za-z0-9]+\\s[A-Za-z0-9]+",
             "Locality" : "[A-za-z]+\\s[A-Za-z]+",
-            "City, Postalcode" : "[A-Za-z0-9]+?\\s?[A-Za-z]+?\\s?[0-9]{5}",
+            "City" : "[A-Za-z0-9]+?\\s?[A-Za-z]+?",
+            "Postal code" : "[0-9]{5}",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Poland",
         "Fields" : {
-            "Name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, Locality" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[A-Za-z0-9-]+[A-Za-z0-9]+",
+            "Locality" : "[A-za-z]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Portugal",
         "Fields" : {
-            "Name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, Locality" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[A-Za-z0-9-]+[A-Za-z0-9]+",
+            "Locality" : "[A-za-z.]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Puerto Rico",
         "Fields" : {
-            "Name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, Locality" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[A-Za-z0-9-]+[A-Za-z0-9]+",
+            "Locality" : "[A-za-z]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Romania",
         "Fields" : {
-            "Name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, Town" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
-            "County" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code"  : "[0-9]{5}",
+            "Town" : "[A-za-z.]+]",
+            "County" : "[A-za-z]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Russia",
         "Fields" : {
-            "Name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Receipient name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
             "Town" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
             "District" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
             "Province" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
@@ -425,28 +499,33 @@
     {
         "CountryName" : "Singapore",
         "Fields" : {
-            "Name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Building number, Streetaddress" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, Postalcode" : "[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-za-z0-9]+",
+            "Receipient name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Building number" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+",
+            "Street address" : "[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "City" : "[A-Za-z0-9]+\\s[A-Za-z0-9]+",
+            "Postal code" : "[0-9]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "South Africa",
         "Fields" : {
-            "Name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Building number, Streetaddress" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "City, Postalcode" : "[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-za-z0-9]+",
+            "Receipient name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Building number" : "[A-Za-z0-9-]+",
+            "Street address" : "[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "City" : "[a-zA-Z]+",
+            "Postal code" : "[0-9]{3}",
             "Country" : "[0-9]?{3}?[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "South Korea",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
             "House number" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9/,]+?\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
             "Subdivision" : "[A-Za-z0-9.]+\\s[A-Za-z]+\\s[A-Za-z0-9]+",
-            "Postalcode, District" : "[a-zA-z0-9]+\\s[a-zA-z0-9,.]+?[a-zA-z0-9,.]+?\\s?[a-zA-z0-9]+?",
+            "Postal code" : "[0-9]{2}\\-[0-9]{2}",
+            "District" : "[a-zA-Z]+",
             "City" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
             "Province" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
             "Country" : "[A-Za-z]+"
@@ -455,87 +534,99 @@
     {
         "CountryName" : "Spain",
         "Fields" : {
-            "Name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Streetname, Building number" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, City, " : "[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-za-z0-9]+",
+            "Receipient name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Street address" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+             "Building number" :  "[0-9a-zA-Z]+",
+            "Postal code" : "[0-9][4}",
+            "City" : "[a-zA-Z,]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Sweden",
         "Fields" : {
-            "Name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Streetname, Building number" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, City, " : "[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-za-z0-9]+",
+            "Receipient name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Street address" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Postal code" : "[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?",
+            "City" : "[a-zA-Z,]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Switzerland",
         "Fields" : {
-            "Name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
-            "Streetname, Building number" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, City, " : "[A-Za-z0-9]+\\s[A-Za-z0-9]+?\\s?[A-za-z0-9]+",
+            "Receipient name": "(Mr|Ms|Mrs|Miss)?\\.?\\s?\\[A-Za-z]+?\\.?[A-za-z]+?\\.?\\s[A-Za-z]+\\s[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+?\\s?\\Ltd.?",
+            "Street address" : "[A-Za-z0-9-]+\\s[a-zA-Z0-9]+\\s?[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Building number" : "[0-9a-zA-Z]+",
+            "Postal code" : "[0-9]{3}",
+            "City" : "[a-zA-Z,]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Urkaine",
         "Fields" : {
-            "Name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Receipient name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Building number" : "[0-9a-zA-Z]+",
             "City" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
-            "Postalcode" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Postal code" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "United Kingdom",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Bussiness Name(optional)" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Bussiness name" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
             "Street address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\s[A-Za-z0-9]+?\\s[a-zA-Z0-9]+?",
             "City" : "[A-Za-z]+",
-            "Postalcode" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+",
+            "Postal code" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+",
             "Country" : "[A-Za-z]+\\s[a-zA-Z]+"
         }
     },
     {
         "CountryName" : "United States",
         "Fields" : {
-            "Name" : "[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+",
-            "Bussiness Name (optional)" : "[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z]+?\\s?[A-Za-z]+?\\s?[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+\\s?[A-Za-z]+",
-            "Street" : "[0-9A-Za-z]+\\s[A-Za-z0-9-]+\\s[A-Za-z0-9]+?+\\s[A-Za-z0-9]+?\\s?\b(E|W|SE|NE|SW|NW|ST)?",
-            "City, State, Zipcode" : "[A-Za-z]+?\\s?[A-za-z]{1}?\\s?[0-9]{4}\\-?[0-9]{3}?",
+            "Receipient name" : "[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+",
+            "Bussiness name" : "[A-Za-z0-9]+?\\s?[A-Za-z0-9]+?\\s?[A-Za-z]+?\\s?[A-Za-z]+?\\s?[A-Za-z]+\\s[A-Za-z]+?\\s?[A-Za-z]+\\s?[A-Za-z]+",
+            "Street Address" : "[0-9A-Za-z]+\\s[A-Za-z0-9-]+\\s[A-Za-z0-9]+?+\\s[A-Za-z0-9]+?\\s?\b(E|W|SE|NE|SW|NW|ST)?",
+            "City" : "[A-Za-z]+",
+            "State" : "[A-Z]{1}",
+            "Zipcode" : "[0-9]{4}",
             "Country" : "[A-Za-z]+"
         }
     },
     {
         "CountryName" : "Uruguay",
         "Fields" : {
-            "Name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, Locality" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Building number" : "[0-9a-zA-Z]+",
+            "Postal code" : "[0-9]{4}",
+            "City" : "[A-Za-z]+\\s[A-Za-z]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Venezuela",
         "Fields" : {
-            "Name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Streetaddress, Building number" : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\d?\\d?\\s?\\-?\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
-            "Postalcode, Locality" : "[A-Za-z0-9-]+[A-Za-z0-9]+\\s[A-za-z.]+",
+            "Receipient name": "[A-Za-z]+?\\s[A-Za-z]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Street address"  : "[A-Za-z0-9-.]+\\s[a-zA-Z0-9]+\\s[a-zA-Z0-9]+?\\s[a-zA-Z0-9]+?",
+            "Building number" : "[0-9a-zA-Z]+",
+            "Postal code" : "[0-9]{3}",
+            "Locality" : "[A-za-z]+\\s[A-Za-z]+",
             "Country" : "[A-Za-z]+"
         } 
     },
     {
         "CountryName" : "Wales",
         "Fields" : {
-            "Name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
-            "Bussiness Name(optional)" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Receipient name" : "[A-Za-z.]+?\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
+            "Bussiness name" : "[A-Za-z.]+?\\,\\s[A-Za-z.]+?\\s[A-Za-z]+\\s[A-Za-z-]+",
             "Street address" : "[A-Za-z0-9]+\\s[a-zA-Z0-9]+\\s[A-Za-z0-9]+?\\s[a-zA-Z0-9]+?",
             "City" : "[A-Za-z]+",
-            "Postalcode" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+",
+            "Postal code" : "[a-zA-z0-9]+\\s[a-zA-z0-9]+",
             "Country" : "[A-Za-z]+\\s[a-zA-Z]+"
         }
     }
