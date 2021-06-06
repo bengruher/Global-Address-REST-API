@@ -43,13 +43,19 @@ namespace restapi
 
             Serilog.Debugging.SelfLog.Enable(msg => Debug.WriteLine(msg));
 
-
-            
+            // get args
+            if (args.Length == 0)
+            {
+                Log.Information("Please enter a boolean argument to indicate if DB tables should be rebuilt.");
+                Log.Information("Usage: dotnet run <true/false>. ");
+                return;
+            }
+            bool rebuildInput = bool.Parse(args[0]);
 
             try
             {
                 Log.Information("Starting web host");
-                CreateHostBuilder(args).Build().Run();
+                CreateHostBuilder(args, rebuildInput).Build().Run();
             }
             catch (Exception ex)
             {
@@ -61,12 +67,13 @@ namespace restapi
             }
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        public static IHostBuilder CreateHostBuilder(string[] args, bool rebuildInput) =>
             Host.CreateDefaultBuilder(args)
                 .UseSerilog()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseSetting("Rebuild", rebuildInput.ToString());
                 });
     }
 }

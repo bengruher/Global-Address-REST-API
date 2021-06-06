@@ -40,14 +40,31 @@ namespace restapi.Controllers
             return Ok(fields.Fields);
         }
 
-        [HttpGet("search")]
+        [HttpGet("search/{countryName}")]
         [ProducesResponseType(typeof(Address), 200)]
-        public IActionResult SearchAddresses([FromBody] Dictionary<string, string> query)  // FIXME- not frombody?
+        public IActionResult SearchAddresses(string countryName, [FromQuery] Dictionary<string, string> query) 
         {
             HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-            var addressList = countriesRepository.Search(query);
+            var addressList = countriesRepository.Search(countryName, query);
             return Ok(addressList);
         }
+
+        /*
+        public IActionResult SearchAddresses(string countryName, string keywords)
+        {
+            HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            string[] keys = keywords.Split('&');
+            var query = new Dictionary<string, string>();
+            foreach(var key in keys)
+            {
+                string paramName = key.Split('=')[0];
+                string paramValue = key.Split('=')[1];
+                query.Add(paramName, paramValue);
+            }
+            var addressList = countriesRepository.Search(countryName, query);
+            return Ok(addressList);
+        }
+        */
 
         [HttpPost("{countryName}")]
         public IActionResult AddAddress(string countryName, [FromBody] Dictionary<string, string> fields) // FIXME - not frombody?

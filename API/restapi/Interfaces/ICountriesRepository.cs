@@ -5,6 +5,6 @@ namespace restapi.Interfaces
 {
     public interface ICountriesRepository
     {
-        List<Address> Search(Dictionary<string, string> query);
+        List<Address> Search(string countryName, Dictionary<string, string> query);
     }
 }

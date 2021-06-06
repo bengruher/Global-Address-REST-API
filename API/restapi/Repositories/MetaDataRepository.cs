@@ -95,7 +95,7 @@ namespace restapi
                 // drop tables if they exist to recreate them in case columns have changed
                 string dropString = "DROP TABLE IF EXISTS \"" + country + "\";";
                 _context.Database.ExecuteSqlRaw(dropString);
-                
+
                 string queryString = "CREATE TABLE \"";
                 queryString += country + "\"(";
                 
@@ -109,13 +109,12 @@ namespace restapi
                 {
                     if(!firstCol)
                         queryString += ", ";
-                    queryString += "\"" + field.Key + "\" varchar(255)"; // FIXME - NULLABLE? 
+                    queryString += "\"" + field.Key + "\" varchar(255)";
                     firstCol = false;
                 }
                 queryString += ");"; 
                 
                 // execute query
-                // _context.Database.CreateIfNotExists();
                 _context.Database.ExecuteSqlRaw(queryString);
             }
         }

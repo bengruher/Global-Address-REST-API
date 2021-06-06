@@ -17,9 +17,11 @@ namespace restapi
 {
     public class Startup
     {
+        bool rebuild;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            rebuild = Configuration.GetValue<bool>("Rebuild");
         }
 
         public IConfiguration Configuration { get; }
@@ -60,14 +62,14 @@ namespace restapi
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "CPSC 5200 REST Example",
+                    Title = "Global Addresses Team Project",
                     Version = "v1",
                     Contact = new OpenApiContact()
                     {
-                        Name = "Michaeljon Miller",
-                        Email = "michaeljon.miller@outlook.com"
+                        Name = "Ben Gruher",
+                        Email = "gruherb@seattleu.edu"
                     },
-                    Description = "CPSC 5200 REST Example"
+                    Description = "Global Addresses Team Project"
                 });
             });
         }
@@ -102,8 +104,11 @@ namespace restapi
             });
 
             // these functions create the metadata and data tables based on the configuration file
-            metaRepo.ReadConfig();             // reads in addressConfig.json and adds address formats to metadata
-            metaRepo.GenCountryTables();       // sql ddl to create tables for each country, depends on rows in the metadata
+            if(rebuild)
+            {
+                metaRepo.ReadConfig();             // reads in addressConfig.json and adds address formats to metadata
+                metaRepo.GenCountryTables();       // sql ddl to create tables for each country, depends on rows in the metadata
+            }
         }
     }
 }
