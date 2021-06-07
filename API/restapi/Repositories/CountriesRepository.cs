@@ -112,7 +112,6 @@ namespace restapi
             queryString += ");";
 
             int rowsAffected = _context.Database.ExecuteSqlRaw(queryString);
-            
             if(rowsAffected == 1)
                 return true;
             return false;

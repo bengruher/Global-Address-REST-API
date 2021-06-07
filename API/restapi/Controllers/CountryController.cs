@@ -54,7 +54,10 @@ namespace restapi.Controllers
         {
             HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
             bool success = countriesRepository.AddAddress(countryName, fields);
-            return Ok(success);
+            if(success)
+                return Ok();
+            else 
+                return BadRequest();
         }
     }
 }
