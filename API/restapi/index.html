@@ -64,7 +64,7 @@
             function add_input(field_name, field_value) {
                 var counter = parseInt($('#counter').val());
                 
-                var html = '<div class="record style="width:500px;"><input pattern= ' + field_value + ' type="text" placeholder='+ field_name.capitalize() + ' name=' + field_name + ' id="name_' + counter + '" class="name_input" style="display: inline-block;"></div><br>';
+                var html = '<div class="record style="width:500px;"><input name="' + field_name + '" pattern= ' + field_value + ' type="text" placeholder="'+ field_name.capitalize() + '" id="name_' + counter + '" class="name_input" style="display: inline-block;"></div><br>';
                 
                 $('#address_fields').append(html);
                 $('#counter').val( counter + 1 );
@@ -110,7 +110,7 @@
                                 inputForm[data_name] = data_value;
                         }
                     });
-                    
+
                     var data1 = jQuery.param(inputForm);
                     var countrySelected = $("#Country").val();
                     countrySelected = countrySelected.replace(/\s/g, '%20');
