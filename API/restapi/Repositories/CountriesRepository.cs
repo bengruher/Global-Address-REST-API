@@ -38,13 +38,17 @@ namespace restapi
             List<Address> retVal = new List<Address>();
 
             // use escape characters for columns with spaces
-            string queryString = "SELECT * FROM \"" + countryName + "\" WHERE \"";
+            string queryString = "SELECT * FROM \"" + countryName + "\" WHERE ";
+            bool firstParam = true;
             foreach(KeyValuePair<string, string> kvp in query)
             {
-                queryString += kvp.Key + "\" = \'" + kvp.Value + "\'";
+                if(!firstParam)
+                    queryString += " AND ";
+                firstParam = false;
+                queryString += "\"" + kvp.Key + "\" = \'" + kvp.Value + "\'";
             }
             queryString += ";";
-            
+
             string connectionString = configuration.GetConnectionString("DefaultConnection");
 
             using (SqlConnection connection = new SqlConnection(connectionString))
