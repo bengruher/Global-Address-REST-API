@@ -100,11 +100,23 @@
                 var inputData = $(this).serializeArray();
                 if ($(this).valid() && atleastOneFieldEntered(inputData)) {
                     var form = $(this);
-                    var data1 = form.serialize();
+                    var inputForm = {};
+
+                    //Removes empty fields
+                    $.each(inputData, function (index, value) {
+                            var data_name = inputData[index].name;
+                            var data_value = inputData[index].value;
+                            if (data_value !== "") {
+                                inputForm[data_name] = data_value;
+                        }
+                    });
+                    
+                    var data1 = jQuery.param(inputForm);
                     var countrySelected = $("#Country").val();
                     countrySelected = countrySelected.replace(/\s/g, '%20');
 
                     var url = 'http://localhost:59969/search/' + countrySelected + '?' + data1;
+
                     $.ajax({
                         url: url,
                         data: null,
