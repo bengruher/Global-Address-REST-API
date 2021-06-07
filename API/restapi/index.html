@@ -8,7 +8,7 @@
         $(document).ready(function(){
             // Initially hid all the buttons
             $("#search").hide();
-            $("#newSearch").hide();
+            $("#displayAddress").hide();
 
             // On page load make get call to get all the countries and display it in Select
             $.ajax({
@@ -48,18 +48,20 @@
 
                         $(address_fields).append('<label>Enter field/s to search an Address</label><br><br>');
                         $.each(data, function(key, value) {
-                            add_inputs(key, value)
+                            add_input(key, value)
                         });
                         $("#search").show();
                     },
                 });
             });
 
+            //Camelcasing for field names
             String.prototype.capitalize = function() {
                 return this.charAt(0).toUpperCase() + this.slice(1);
             }
 
-            function add_inputs(field_name, field_value) {
+            //Adds input field for each field name
+            function add_input(field_name, field_value) {
                 var counter = parseInt($('#counter').val());
                 
                 var html = '<div class="record style="width:500px;"><input pattern= ' + field_value + ' type="text" placeholder='+ field_name.capitalize() + ' name=' + field_name + ' id="name_' + counter + '" class="name_input" style="display: inline-block;"></div><br>';
@@ -68,13 +70,14 @@
                 $('#counter').val( counter + 1 );
             }
 
+            //Adding validations for each input as per regex pattern received 
             function add_validations(field_name) {
                 $(field_name).each(function() {
                     var regex = new RegExp($(this).attr("pattern"));
                     $(this).rules("add", 
                         {
                             pattern: regex,
-                            required: true,
+                            //required: true,
                             messages: {
                                 required: "Value required.",
                             }
@@ -89,7 +92,73 @@
                 }
             });
             $("#search_address_form").validate();
+
+            // After Submitting form validates and then makes GET call to get/search the address for the input 
+            // Display the addresses returned/found
+            $( "#search_address_form" ).submit(function(event) {
+                event.preventDefault(); // avoid to execute the actual submit of the form.
+                var inputData = $(this).serializeArray();
+                if ($(this).valid() && atleastOneFieldEntered(inputData)) {
+                    var form = $(this);
+                    var data1 = form.serialize();
+                    var countrySelected = $("#Country").val();
+                    countrySelected = countrySelected.replace(/\s/g, '%20');
+
+                    var url = 'http://localhost:59969/search/' + countrySelected + '?' + data1;
+                    $.ajax({
+                        url: url,
+                        data: null,
+                        type: 'GET',
+                        dataType: 'json',
+                        beforeSend: function (req) {
+                            req.setRequestHeader('Accept', 'text/plain');
+                        },
+                        success: function(data) {
+                            renderAddress(data);
+                            $("#searchAddress").hide();
+                            $("#displayAddress").show();
+                        },
+                    });
+                }
+            });
+
+            //To check form is empty or not. 
+            //Form is submiited if at least one of the field is not empty.
+            function atleastOneFieldEntered(data) {
+                console.log(data);
+                var atleastOnePresent = false;
+                data.forEach(element => {
+                    if (element.value) {
+                        atleastOnePresent = true;
+                    }
+                });
+                return atleastOnePresent;
+            }
+
+            // To display addresses found
+            function renderAddress(data) {
+                var addCounter = 0;
+                data.forEach(element => {
+                    addCounter = addCounter + 1;
+                    for (var item in element) {
+                        var itemData = element[item];
+                        $("#addressdiv").append('<p><b> Address ' + addCounter + '</b></p>');
+                        for (var key in itemData) {
+                            $("#addressdiv").append('<p>' + key + ' - ' + itemData[key] + '</p>');
+                        }
+                    }
+                });
+                if (addCounter == 0) {
+                    $("#addressdiv").append('<p> No matching address found </p>');
+                }
+            }
+
+            // Reload page to home page on clicking Search new address
+            $("#newSearch").click(function() {
+                location.reload();
+            });
         });
+
         </script>
     </head>
     <body>
