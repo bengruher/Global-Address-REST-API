@@ -74,5 +74,48 @@ namespace restapi
             }
             return retVal;
         }
+
+        public bool AddAddress(string countryName, Dictionary<string, string> query)
+        {
+            if(query.Count == 0)
+                return false;
+            // use escape characters for columns with spaces
+            string queryString = "INSERT INTO \"" + countryName + "\" (";
+            
+            // build lists first so that the order matches - not sure if Dictionary iterates in the same order every time
+            List<string> columnNames = new List<string>();
+            List<string> columnValues = new List<string>();
+            foreach(KeyValuePair<string, string> kvp in query)
+            {
+                columnNames.Add(kvp.Key);
+                columnValues.Add(kvp.Value);
+            }
+
+            bool firstCol = true;
+            foreach(string col in columnNames)
+            {
+                if(!firstCol)
+                    queryString += ",";
+                queryString += "\"" + col + "\"";
+                firstCol = false;
+            }
+            queryString += ") VALUES (";
+
+            bool firstVal = true;
+            foreach(string val in columnValues)
+            {
+                if(!firstVal)
+                    queryString += ",";
+                queryString += "\'" + val + "\'";
+                firstVal = false;
+            }
+            queryString += ");";
+
+            int rowsAffected = _context.Database.ExecuteSqlRaw(queryString);
+            
+            if(rowsAffected == 1)
+                return true;
+            return false;
+        }
     }
 }

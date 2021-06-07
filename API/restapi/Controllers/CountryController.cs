@@ -49,27 +49,12 @@ namespace restapi.Controllers
             return Ok(addressList);
         }
 
-        /*
-        public IActionResult SearchAddresses(string countryName, string keywords)
+        [HttpPost("{countryName}")]
+        public IActionResult AddAddress(string countryName, [FromQuery] Dictionary<string, string> fields) 
         {
             HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-            string[] keys = keywords.Split('&');
-            var query = new Dictionary<string, string>();
-            foreach(var key in keys)
-            {
-                string paramName = key.Split('=')[0];
-                string paramValue = key.Split('=')[1];
-                query.Add(paramName, paramValue);
-            }
-            var addressList = countriesRepository.Search(countryName, query);
-            return Ok(addressList);
-        }
-        */
-
-        [HttpPost("{countryName}")]
-        public IActionResult AddAddress(string countryName, [FromBody] Dictionary<string, string> fields) // FIXME - not frombody?
-        {
-            return Ok(countryName);
+            bool success = countriesRepository.AddAddress(countryName, fields);
+            return Ok(success);
         }
     }
 }
