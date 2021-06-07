@@ -14,7 +14,7 @@ ASPNETCORE_ENVIRONMENT=Development dotnet run false
 The above commands build and run the API. The system relies on a configuration file to enforce field formats. This config file, named addressConfig.json contains the names of each country and their address fields. It also contains regex strings specifying the required format for those fields. 
 
 If there are significant changes to this configuration file, the DB will need to be rebuilt. To do this, run the API in the rebuild mode using the argument "true" instead of false. The command will look like:
-```dotnet run true```. 
+```dotnet run true```. Note that this will delete and rebuild all of the address tables, so existing addresses will be lost. We recommend backing up the system before running this command.
 
 ## API
 
@@ -34,4 +34,4 @@ As of now, the following methods are supported;
 
 ## Swagger
 This application uses Swagger for API Documentation. Check out the following link to interact with the API via the Swagger interface.
-http://localhost:59969/swagger/index.html
+http://localhost:59969/swagger/index.html 

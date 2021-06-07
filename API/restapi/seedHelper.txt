@@ -1,0 +1,97 @@
+USA:
+1. 
+{
+  "receipient name": "Peter George",
+  "bussiness name": "APPLE INC",
+  "street Address": "16236 NE 13th PL",
+  "city": "Seattle",
+  "state": "WA",
+  "zipcode": "98052",
+  "country": "United States"
+}
+
+2. 
+{
+  "receipient name": "Bob Builder",
+  "bussiness name": "AMAZON INC",
+  "street Address": "54321 SE 40th St",
+  "city": "Seattle",
+  "state": "WA",
+  "zipcode": "98122",
+  "country": "United States"
+}
+
+3. 
+{
+  "receipient name": "Benjamin Franklin",
+  "bussiness name": "KITES INC",
+  "street Address": "678 NE 8th Ave",
+  "city": "Philadelphia",
+  "state": "PA",
+  "zipcode": "56934",
+  "country": "United States"
+}
+
+Canada:
+1. 
+{
+  "receipient name": "John Jones",
+  "bussiness name": "Marketing Department",
+  "street Address": "10-123 Main Street",
+  "city": "Montreal",
+  "province": "QC",
+  "postal code": "H3Z 2Y7",
+  "country": "Canada"
+}
+
+2. 
+{
+  "receipient name": "Drake",
+  "bussiness name": "OVO",
+  "street Address": "123 October Lane",
+  "city": "Vancouver",
+  "province": "BC",
+  "postal code": "V5P V3H",
+  "country": "Canada"
+}
+
+3. 
+{
+  "receipient name": "Demar Derozan",
+  "bussiness name": "Raptors",
+  "street Address": "5867 Championship St",
+  "city": "Toronto",
+  "province": "ON",
+  "postal code": "M3K M5S",
+  "country": "Canada"
+}
+
+India:
+1. 
+{
+  "receipient name": "Mr. I. K. Taneja",
+  "street address 1": "Flat No. 100",
+  "street address 2": "Triveni Apartments",
+  "locality": "Pitam Pura",
+  "city": "New Delhi",
+  "postal code": "110034",
+  "country": "India"
+}
+
+Germany:
+1. 
+{
+  "receipient name": "Firma",
+  "street address": "Postfach 10 01",
+  "postal code": "32547",
+  "city": "Bad Oyenhausen",
+  "country": "Germany"
+}
+
+2. 
+{
+  "street address": "Luebeckertordamm 63",
+  "postal code": "97346",
+  "city": "Iphofen",
+  "country": "Germany"
+}

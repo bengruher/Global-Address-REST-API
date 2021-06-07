@@ -1,2 +1,18 @@
 curl -X POST "http://localhost:59969/United%20States?receipient%20name=Peter%20George&bussiness%20name=APPLE%20INC&street%20Address=16236%20NE%2013th%20PL&city=Seattle&state=WA&zipcode=98052&country=United%20States" -H  "accept: */*" -d ""
 
+curl -X POST "http://localhost:59969/United%20States?receipient%20name=Bob%20Builder&bussiness%20name=AMAZON%20INC&street%20Address=54321%20SE%2040th%20St&city=Seattle&state=WA&zipcode=98122&country=United%20States" -H  "accept: */*" -d ""
+
+curl -X POST "http://localhost:59969/United%20States?receipient%20name=Benjamin%20Franklin&bussiness%20name=KITES%20INC&street%20Address=678%20NE%208th%20Ave&city=Philadelphia&state=PA&zipcode=56934&country=United%20States" -H  "accept: */*" -d ""
+
+curl -X POST "http://localhost:59969/Canada?receipient%20name=John%20Jones&bussiness%20name=Marketing%20Department&street%20Address=10-123%20Main%20Street&city=Montreal&province=QC&postal%20code=H3Z%202Y7&country=Canada" -H  "accept: */*" -d ""
+
+curl -X POST "http://localhost:59969/Canada?receipient%20name=Drake&bussiness%20name=OVO&street%20Address=123%20October%20Lane&city=Vancouver&province=BC&postal%20code=V5P%20V3H&country=Canada" -H  "accept: */*" -d ""
+
+curl -X POST "http://localhost:59969/Canada?receipient%20name=Demar%20Derozan&bussiness%20name=Raptors&street%20Address=5867%20Championship%20St&city=Toronto&province=ON&postal%20code=M3K%20M5S&country=Canada" -H  "accept: */*" -d ""
+
+curl -X POST "http://localhost:59969/India?receipient%20name=Mr.%20I.%20K.%20Taneja&street%20address%201=Flat%20No.%20100&street%20address%202=Triveni%20Apartments&locality=Pitam%20Pura&city=New%20Delhi&postal%20code=110034&country=India" -H  "accept: */*" -d ""
+
+curl -X POST "http://localhost:59969/Germany?receipient%20name=Firma&street%20address=Postfach%2010%2001&postal%20code=32547&city=Bad%20Oyenhausen&country=Germany" -H  "accept: */*" -d ""
+
+curl -X POST "http://localhost:59969/Germany?street%20address=Luebeckertordamm%2063&postal%20code=97346&city=Iphofen&country=Germany" -H  "accept: */*" -d ""
+
