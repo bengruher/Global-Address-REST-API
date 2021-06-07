@@ -1,0 +1,4 @@
+curl -X POST "http://localhost:59969/United%20States?receipient%20name=Peter%20George&bussiness%20name=APPLE%20INC&street%20Address=16236%20NE%2013th%20PL&city=Seattle&state=WA&zipcode=98052&country=United%20States" -H  "accept: */*" -d ""
+
+Search:
+curl -X GET "http://localhost:59969/search/United%20States?receipient%20name=Peter%20George" -H  "accept: text/plain"

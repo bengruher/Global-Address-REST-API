@@ -19,18 +19,18 @@ If there are significant changes to this configuration file, the DB will need to
 ## API
 
 As of now, the following methods are supported;
-  - GET / 
+  - ```GET /``` 
       - Returns a list of country names
-  - GET /{countryName} 
+  - ```GET /{countryName}```
       - Returns the fields for a country in the form of a a dictionary (key: field name, value: field type)
-  - GET /search/{countryName} 
+  - ```GET /search/{countryName}```
       - Searches for addresses matching a set of parameters
       - Provide query parameters in the form of key, value pairs in the URI
       - Exaxmple: /search/Canada?province=Quebec
-  - POST /{countryName} 
+  - ```POST /{countryName}```
       - Adds an address to the database with the values specified in the parameters
       - Provide query parameters in the form of key, value pairs in the URI
-      - Example: /search/Canada?name=John Jones,street=10-123 Main Street,city=Montreal,province=QC,postal code=H3Z 2Y7
+      - Example: /search/Canada?name=John%Jones&street=10-123%Main%Street&city=Montreal&province=QC&postal%code=H3Z%2Y7
 
 ## Swagger
 This application uses Swagger for API Documentation. Check out the following link to interact with the API via the Swagger interface.
