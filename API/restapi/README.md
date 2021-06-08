@@ -16,6 +16,12 @@ The above commands build and run the API. The system relies on a configuration f
 If there are significant changes to this configuration file, the DB will need to be rebuilt. To do this, run the API in the rebuild mode using the argument "true" instead of false. The command will look like:
 ```dotnet run true```. Note that this will delete and rebuild all of the address tables, so existing addresses will be lost. We recommend backing up the system before running this command.
 
+## To run front-end locally
+
+To run the front-end locally, use the following command:
+
+```python -m http.server```
+
 ## API
 
 As of now, the following methods are supported;
