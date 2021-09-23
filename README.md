@@ -1,2 +1,8 @@
 # GlobalAddressAPI
 Team assignment for CPSC 5200 Architecture. This project will feature a UI and an API that can be used to search for global addresses, in a country-specific format.
+
+Our major architectural decisions are documented in the Powerpoint located in this repo. Our solution was unique in that we used a configuration file to define the address formats for each country. This enabled us to change the appearance of the form depending on which country was selected. We were even able to provide the information in the country-specific language. We used regex to enforce the countries' specific data formats (such as the United States having a 5 digit zip code). To accommodate the various fields for each country, we dynamically created database tables based on the information in the configuration file. When a country format would change, we would delete and reconstruct the tables using Data Definition Language within the application. 
+
+One of our largest challenges was handling all of the possible fields for a country's address format. For example, for an apartment in Spain, sometimes the floor number was specified. Other times, only the building name and the unit number were specified. To accommodate these variations, we included every valid field name into the form and made all but a couple of the fields optional. The major benefit of this implementation was that the user could decide which fields applied to them and leave the rest blank. 
+
+This project exemplifies out-of-the-box thinking and several of the Gang of Four design patterns. It also demonstrates API design and implementation. 
